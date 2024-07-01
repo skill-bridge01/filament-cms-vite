@@ -1,0 +1,14 @@
+git clone https://github.com/filamentphp/demo.git
+
+composer require solution-forest/filament-cms-website-plugin --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix
+php artisan filament-cms:install
+php artisan filament-cms:page-template MyTemplate
+php artisan make:filament-user
+
+localhost:8000/login
+name:rabbit
+email:pandaren1013@gmail.com
+pwd:123456
+
+##multi language
+composer require filament/spatie-laravel-translatable-plugin:"^3.2" -W --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix
