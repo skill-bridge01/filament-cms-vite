@@ -17,8 +17,8 @@ class CmsPageResource extends \SolutionForest\FilamentCms\Filament\Resources\Cms
         ];
     }
 
-    public static function getTranslatableLocales(): array
-    {
-        return ['en', 'ar'];
-    }
+    // public static function getTranslatableLocales(): array
+    // {
+    //     return ['en', 'ar'];
+    // }
 }

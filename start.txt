@@ -12,3 +12,5 @@ pwd:123456
 
 ##multi language
 composer require filament/spatie-laravel-translatable-plugin:"^3.2" -W --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix
+
+composer require filament/forms:"^3.2" -W --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix

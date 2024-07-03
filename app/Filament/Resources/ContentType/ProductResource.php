@@ -7,11 +7,13 @@ use App\CmsPages\Templates\ContentType\Product as Template;
 use Filament\Forms;
 use Illuminate\Database\Eloquent\Builder;
 use SolutionForest\FilamentCms\Enums\PageType;
+use Filament\Resources\Concerns\Translatable;
 use SolutionForest\FilamentCms\Filament\Resources\ContentTypePageBaseResource as BaseResource;
 
 class ProductResource extends BaseResource
 {
     // use \Filament\Resources\Concerns\Translatable;
+    use Translatable;
 
     protected static ?int $navigationSort = null;
 
@@ -39,4 +41,9 @@ class ProductResource extends BaseResource
     {
         return Template::class;
     }
+
+    // public static function getTranslatableLocales(): array
+    // {
+    //     return ['en', 'ar'];
+    // }
 }
