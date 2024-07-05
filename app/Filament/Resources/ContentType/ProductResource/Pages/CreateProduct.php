@@ -9,7 +9,7 @@ use App\Filament\Resources\ContentType\ProductResource;
 
 class CreateProduct extends CreateRecord
 {
-    // use CreateRecord\Concerns\Translatable;
+    use CreateRecord\Concerns\Translatable;
     use Concern\CanPublishPage;
 
     protected static string $resource = ProductResource::class;
@@ -19,16 +19,24 @@ class CreateProduct extends CreateRecord
         return static::getResource()::mutateFormDataBeforeCreate($data);
     }
 
-    public function getActions(): array
-    {
-        return array_merge(
-            // [LocaleSwitcher::make()],
-            parent::getActions() ?? [],
-        );
-    }
+    // public function getActions(): array
+    // {
+    //     return array_merge(
+    //         // [LocaleSwitcher::make()],
+    //         parent::getActions() ?? [],
+    //     );
+    // }
 
     protected static function canUnpublishPage(): bool
     {
         return false;
+    }
+    protected function getHeaderActions(): array
+    {
+        return [
+            // Actions\LocaleSwitcher::make(),
+            \Filament\Actions\LocaleSwitcher::make(),
+            // ...
+        ];
     }
 }

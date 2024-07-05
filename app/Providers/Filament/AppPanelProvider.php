@@ -52,8 +52,8 @@ class AppPanelProvider extends PanelProvider
             ])
             ->plugin(
                 FilamentCmsPanel::make(),
-                SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(['en', 'ar']),
+                // SpatieLaravelTranslatablePlugin::make()
+                //     ->defaultLocales(['en', 'ar']),
             );
     }
 }

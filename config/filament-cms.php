@@ -12,7 +12,7 @@ return [
 
     'default_layout' => 'app',
 
-    'locales' => [],
+    'locales' => ['ar', 'en'],
 
     /*
     |--------------------------------------------------------------------------
@@ -29,20 +29,35 @@ return [
 
     'filament' => [
         'resources' => [
-            'cms_page' => Resources\CmsPageResource::class,
-            'cms_page_navigation_category' => Resources\CmsPageNavigationCategoryResource::class,
-            'cms_tag' => Resources\CmsTagResource::class,
+            'cms_page' => \App\Filament\Resources\CmsPageResource::class,
+            'cms_page_navigation_category' => \App\Filament\Resources\CmsPageNavigationCategoryResource::class,
+            'cms_tag' => \App\Filament\Resources\CmsTagResource::class,
+            // 'cms_page' => Resources\CmsPageResource::class,
+            // 'cms_page_navigation_category' => Resources\CmsPageNavigationCategoryResource::class,
+            // 'cms_tag' => Resources\CmsTagResource::class,
         ],
+        // 'navigation' => [
+        //     'icon' => [
+        //         Resources\CmsPageResource::class => 'heroicon-o-document',
+        //         Resources\CmsPageNavigationCategoryResource::class => 'heroicon-o-bars-3-center-left',
+        //         Resources\CmsTagResource::class => 'heroicon-o-tag',
+        //     ],
+        //     'sort' => [
+        //         Resources\CmsPageResource::class => -10,
+        //         Resources\CmsTagResource::class => -9,
+        //         Resources\CmsPageNavigationCategoryResource::class => -8,
+        //     ],
+        // ],
         'navigation' => [
             'icon' => [
-                Resources\CmsPageResource::class => 'heroicon-o-document',
-                Resources\CmsPageNavigationCategoryResource::class => 'heroicon-o-bars-3-center-left',
-                Resources\CmsTagResource::class => 'heroicon-o-tag',
+                \App\Filament\Resources\CmsPageResource::class => 'heroicon-o-document',
+                \App\Filament\Resources\CmsPageNavigationCategoryResource::class => 'heroicon-o-bars-3-center-left',
+                \App\Filament\Resources\CmsTagResource::class => 'heroicon-o-tag',
             ],
             'sort' => [
-                Resources\CmsPageResource::class => -10,
-                Resources\CmsTagResource::class => -9,
-                Resources\CmsPageNavigationCategoryResource::class => -8,
+                \App\Filament\Resources\CmsPageResource::class => -10,
+                \App\Filament\Resources\CmsTagResource::class => -9,
+                \App\Filament\Resources\CmsPageNavigationCategoryResource::class => -8,
             ],
         ],
         'recordTitleAttribute' => [
@@ -89,14 +104,24 @@ return [
 
     ],
 
+    // 'models' => [
+    //     // 'cms_page' => Models\CmsPage::class,
+    //     'cms_page' => \App\Models\CmsPage::class,
+    //     'cms_published_page' => Models\CmsPublishedPage::class,
+    //     'cms_page_navigation' => Models\CmsPageNavigation::class,
+    //     'cms_page_navigation_category' => Models\CmsPageNavigationCategory::class,
+    //     'cms_tag' => Models\CmsTag::class,
+    //     'cms_taggable' => Models\CmsTaggable::class,
+    //     'cms_tag_category' => Models\CmsTagCategory::class,
+    // ],
     'models' => [
-        'cms_page' => Models\CmsPage::class,
-        'cms_published_page' => Models\CmsPublishedPage::class,
-        'cms_page_navigation' => Models\CmsPageNavigation::class,
-        'cms_page_navigation_category' => Models\CmsPageNavigationCategory::class,
-        'cms_tag' => Models\CmsTag::class,
-        'cms_taggable' => Models\CmsTaggable::class,
-        'cms_tag_category' => Models\CmsTagCategory::class,
+        'cms_page' => \App\Models\CmsPage::class,
+        // 'cms_published_page' => \App\Models\CmsPublishedPage::class,
+        'cms_page_navigation' => \App\Models\CmsPageNavigation::class,
+        'cms_page_navigation_category' => \App\Models\CmsPageNavigationCategory::class,
+        'cms_tag' => \App\Models\CmsTag::class,
+        'cms_taggable' => \App\Models\CmsTaggable::class,
+        'cms_tag_category' => \App\Models\CmsTagCategory::class,
     ],
 
     'column_names' => [

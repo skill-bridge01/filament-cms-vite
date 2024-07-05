@@ -17,15 +17,15 @@ return new class extends Migration
             $table->timestamp('publish_until')->nullable()->after('published_at');
         });
 
-        Utils::getCmsPublishedPageModel()::all()->each(function ($cmsPublishedPage) {
-            $draftPage = $cmsPublishedPage->draftPage;
+        // Utils::getCmsPublishedPageModel()::all()->each(function ($cmsPublishedPage) {
+        //     $draftPage = $cmsPublishedPage->update();
 
-            if ($draftPage) {
+        //     if ($draftPage) {
 
-                $cmsPublishedPage->slug = $draftPage->slug;
-                $cmsPublishedPage->save();
-            }
-        });
+        //         $cmsPublishedPage->slug = $draftPage->slug;
+        //         $cmsPublishedPage->save();
+        //     }
+        // });
     }
 
     public function down(): void

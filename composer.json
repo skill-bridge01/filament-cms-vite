@@ -22,6 +22,8 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",
         "solution-forest/filament-cms-website-plugin": "^2.1",
+        "spatie/image": "^3.6",
+        "spatie/laravel-translatable": "^6.7",
         "squirephp/countries-en": "^3.3",
         "squirephp/currencies-en": "^3.3"
     },

@@ -1,4 +1,7 @@
 /* ./src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,7 +35,7 @@ textarea:active {
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Cairo", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -40,6 +43,8 @@ textarea:active {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 a {
   color: #e2e2e2;

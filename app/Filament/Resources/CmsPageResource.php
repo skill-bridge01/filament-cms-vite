@@ -3,8 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CmsPageResource\Pages;
+use Filament\Resources\Resource;
+// use SolutionForest\FilamentCms\Filament\Resources\ContentTypePageBaseResource as BaseResource;
+use SolutionForest\FilamentCms\Filament\Resources\CmsPageResource as BaseResource;
 
-class CmsPageResource extends \SolutionForest\FilamentCms\Filament\Resources\CmsPageResource
+// class CmsPageResource extends \SolutionForest\FilamentCms\Filament\Resources\CmsPageResource
+class CmsPageResource extends BaseResource
 {
     use \Filament\Resources\Concerns\Translatable;
 
@@ -13,7 +17,7 @@ class CmsPageResource extends \SolutionForest\FilamentCms\Filament\Resources\Cms
         return [
             'index' => Pages\ListCmsPages::route('/'),
             'create' => Pages\CreateCmsPage::route('/create'),
-            'edit' => Pages\EditCmsPage::route('/{record}/edit'),
+            'edit' => Pages\EditCmsPage::route('/{record:id}/edit'),
         ];
     }
 

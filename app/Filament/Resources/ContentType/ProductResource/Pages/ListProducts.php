@@ -11,7 +11,7 @@ use App\Filament\Resources\ContentType\ProductResource;
 
 class ListProducts extends ListRecords
 {
-    // use ListRecords\Concerns\Translatable;
+    use ListRecords\Concerns\Translatable;
 
     protected static string $resource = ProductResource::class;
 
@@ -30,11 +30,27 @@ class ListProducts extends ListRecords
         return false;
     }
 
-    protected function getActions(): array
+    // protected function getActions(): array
+    // {
+    //     return [
+    //         // [LocaleSwitcher::make()],
+    //         CreateAction::make(),
+    //     ];
+    // }
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         Actions\LocaleSwitcher::make(),
+    //         // [LocaleSwitcher::make()],
+    //         // CreateAction::make(),
+    //         // ...
+    //     ];
+    // }
+    protected function getHeaderActions(): array
     {
         return [
-            // [LocaleSwitcher::make()],
-            CreateAction::make(),
+            \Filament\Actions\LocaleSwitcher::make(),
+            \Filament\Actions\CreateAction::make(),
         ];
     }
 }

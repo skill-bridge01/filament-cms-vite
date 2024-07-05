@@ -8,7 +8,7 @@
 
     $theme = FilamentCms::getCurrentTheme();
 
-    $tags = $page?->tags?->items() ?? [];
+    $tags = $page?->tags ?? collect([]);
 @endphp
 
 <x-dynamic-component

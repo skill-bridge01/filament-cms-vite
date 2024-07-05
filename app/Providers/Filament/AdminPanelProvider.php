@@ -62,10 +62,12 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(config('filament-cms.locales')))
             ->plugin(
-                SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(['en', 'es']),
-                FilamentCmsPanel::make()
+                FilamentCmsPanel::make(),
+                // SpatieLaravelTranslatablePlugin::make()
+                //     ->defaultLocales(['en', 'ar']),
+                
             );
     }
 }

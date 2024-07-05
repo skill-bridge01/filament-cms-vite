@@ -12,6 +12,8 @@ class EditProduct extends EditRecord
     // use EditRecord\Concerns\Translatable {
     //     EditRecord\Concerns\Translatable::getActions as protected translatableActions;
     // }
+
+    use EditRecord\Concerns\Translatable;
     use Concern\CanPublishPage;
     use Concern\CanPreviewPage {
         Concern\CanPreviewPage::getActions as protected previewPageActions;
@@ -39,11 +41,25 @@ class EditProduct extends EditRecord
         $this->dispatch('updateAudits');
     }
 
-    public function getActions(): array
+    // public function getActions(): array
+    // {
+    //     return array_merge(
+    //         // [LocaleSwitcher::make()],
+    //         $this->previewPageActions(),
+    //     );
+    // }
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         Actions\LocaleSwitcher::make(),
+    //         // ...
+    //     ];
+    // }
+    protected function getHeaderActions(): array
     {
-        return array_merge(
-            // [LocaleSwitcher::make()],
-            $this->previewPageActions(),
-        );
+        return [
+            \Filament\Actions\LocaleSwitcher::make(),
+            ...parent::getActions(),
+        ];
     }
 }

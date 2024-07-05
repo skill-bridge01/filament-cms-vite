@@ -21,8 +21,9 @@
         @stack('styles')
     </head>
 
-    <body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
-        @section('header')
+    <!-- <body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"> -->
+    <body>    
+        <!-- @section('header')
             @include("cms.theme.{$theme}.header")
         @show
 
@@ -35,6 +36,8 @@
         @show
 
         @stack('beforeCoreScripts')
-        @stack('scripts')
+        @stack('scripts') -->
+        <div id="app"></div>
+        @vite('resources/js/app.js')
     </body>
 </html>
